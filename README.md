@@ -11,7 +11,7 @@
 - 10% digital migration could save 5.1M request-days annually
 - Clear action plan: Channel Migration (120K requests), Workgroup Rebalancing (NHS), Categorization Audit (610 outliers)
 
-**Dataset Overview:** Kansas City 311 Service Request System (https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp/about_data)
+**Dataset Overview:** Kansas City 311 Service Request System
 
 - **Total Records:** 1,563,215 service requests
 - **Time Period:** 4 years (January 2018 - October 2021)
