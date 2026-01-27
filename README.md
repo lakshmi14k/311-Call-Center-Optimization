@@ -38,7 +38,7 @@
 
 │   └── NOTE: Raw dataset (339 MB TSV) available at Kansas City Open Data Portal
 
-│             https://data.kcmo.org/311/311-Call-Center-Service-Requests
+(https://data.kcmo.org/311/311-Call-Center-Service-Requests)
 
 │
 
