@@ -28,49 +28,63 @@
 
 **Project Structure**
 
-├── data/                          # Raw and processed datasets 
+311-Call-Center-Optimization/
 
-(https://data.kcmo.org/311/311-Call-Center-Service-Requests-2007-March-2021/7at3-sxhp/about_data)
+├── Data/
 
-│   ├── raw/                       # Original TSV (339 MB)
+│   ├── Data Validation.xlsx
 
-│   ├── processed/                 # Cleaned/staged CSV (447 MB)
+│   ├── Staged_Dataset.zip              # Cleaned/processed data (447 MB compressed)
 
-│   └── validation/                # Data quality checks
+│   └── NOTE: Raw dataset (339 MB TSV) available at Kansas City Open Data Portal
 
-├── etl/                           # Alteryx ETL workflows
+│             https://data.kcmo.org/311/311-Call-Center-Service-Requests
 
-│   └── workflow.yxmd              # Data profiling + cleaning
+│
 
-├── sql/                           # SQL Server analysis scripts
+├── ETL/
 
-│   ├── results/                   # Query outputs (6 analysis CSVs)
+│   ├── Alteryx Workflow.png            # Visual workflow diagram
 
-│   ├── basics.sql
+│   └── Alteryx Workflow.yxmd           # Data profiling + cleaning workflow
 
-│   ├── cohort_analysis.sql
+│
 
-│   ├── master_data_source.sql
+├── SQL/
 
-│   ├── priority_requests.sql
+│   ├── Results - Scripts.zip           # All 6 query outputs (200+ MB compressed)
 
-│   ├── seasonality_pattern.sql
+│   ├── Basics.sql
 
-│   ├── source_efficiency.sql
+│   ├── Cohort Analysis.sql
 
-│   ├── validations.sql
+│   ├── Master Data Source.sql
 
-│   └── workgroup_benchmarking.sql
+│   ├── Priority Requests Analysis.sql
 
-├── dashboards/                    # Visualizations
+│   ├── Seasonality Pattern Analysis.sql
 
-│   ├── tableau/                   # Tableau workbook
+│   ├── Source Channel Efficiency Analysis.sql
 
-│   └── powerbi/                   # PowerBI file
+│   ├── Validations.sql
 
-├── docs/                          # Documentation
+│   └── Workgroup Performance Benchmarking.sql
 
-│   └── key_findings.docx          # Executive summary
+│
+
+├── Dashboards/
+
+│   ├── Tableau Viz.twb                 # Interactive Tableau workbook
+
+│   └── PowerBI Viz.pbix                # PowerBI dashboard
+
+│
+
+├── Docs/
+
+│   └── Key Findings.docx               # Executive summary of insights
+
+│
 
 └── README.md
 
