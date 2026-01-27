@@ -1,0 +1,21 @@
+USE KansasCityRequests;
+GO
+
+-- Seasonality Pattern Analysis
+SELECT 
+    DEPARTMENT,
+    DATEPART(QUARTER, DATE_CREATED) AS quarter,
+    DATENAME(MONTH, DATE_CREATED) AS month_name,
+    COUNT(*) AS request_count,
+    AVG(COUNT(*)) OVER (PARTITION BY DEPARTMENT) AS dept_avg_monthly,
+    ROUND(
+        (COUNT(*) - AVG(COUNT(*)) OVER (PARTITION BY DEPARTMENT)) * 100.0 / 
+        NULLIF(AVG(COUNT(*)) OVER (PARTITION BY DEPARTMENT), 0), 
+        2
+    ) AS deviation_from_avg_pct,
+    AVG([DAYS TO CLOSE]) AS avg_closure_days
+FROM stg_kansascityrequests
+WHERE YEAR(DATE_CREATED) BETWEEN 2018 AND 2021
+    AND DEPARTMENT IS NOT NULL
+GROUP BY DEPARTMENT, DATEPART(QUARTER, DATE_CREATED), DATENAME(MONTH, DATE_CREATED)
+ORDER BY DEPARTMENT, quarter;
