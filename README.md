@@ -28,27 +28,49 @@
 
 **Project Structure**
 
-├── 01_data/                    # Raw TSV + staged CSV
+├── data/                          # Raw and processed datasets
 
-├── 02_etl_profiling/           # Alteryx workflow + screenshots
+│   ├── raw/                       # Original TSV (339 MB)
 
-├── 03_sql_analysis/            # 7 analysis queries + results
+│   ├── processed/                 # Cleaned/staged CSV (447 MB)
 
-│   ├── 01_cohort_analysis.sql
+│   └── validation/                # Data quality checks
 
-│   ├── 02_seasonality_pattern.sql
+├── etl/                           # Alteryx ETL workflows
 
-│   ├── 03_source_efficiency.sql
+│   └── workflow.yxmd              # Data profiling + cleaning
 
-│   ├── 04_priority_requests.sql
+├── sql/                           # SQL Server analysis scripts
 
-│   ├── 05_workgroup_performance.sql
+│   ├── results/                   # Query outputs (6 analysis CSVs)
 
-│   └── query_results/          # CSV exports (69-324 rows each)
+│   ├── basics.sql
 
-├── 04_visualizations/          # Tableau workbook + screenshots
+│   ├── cohort_analysis.sql
 
-└── 05_insights/                # Key findings + recommendations
+│   ├── master_data_source.sql
+
+│   ├── priority_requests.sql
+
+│   ├── seasonality_pattern.sql
+
+│   ├── source_efficiency.sql
+
+│   ├── validations.sql
+
+│   └── workgroup_benchmarking.sql
+
+├── dashboards/                    # Visualizations
+
+│   ├── tableau/                   # Tableau workbook
+
+│   └── powerbi/                   # PowerBI file
+
+├── docs/                          # Documentation
+
+│   └── key_findings.docx          # Executive summary
+
+└── README.md
 
 **Data Lineage**
 
