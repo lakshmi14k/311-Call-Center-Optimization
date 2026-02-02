@@ -28,38 +28,38 @@
 
 **Project Structure:**
 ```
-Zoom-Analytics/
-├── Raw/
-│   ├── accounts.csv                    # Account master data (400 accounts)
-│   ├── events.csv                      # Meeting/webinar events (14K+ rows)
-│   ├── subscriptions.csv               # Subscription plans and features
-│   └── users.csv                       # User details per account
+311-Call-Center-Optimization/
+├── Data/
+│   ├── Data Validation.xlsx            # Data quality validation checks
+│   ├── Staged_Dataset.zip              # Cleaned/processed data (447 MB compressed)
+│   └── NOTE: Raw dataset (339 MB TSV) available at:
+│            https://data.kcmo.org/311/311-Call-Center-Service-Requests
 │
-├── Models/
-│   ├── Staging/                        # Data cleaning and standardization
-│   │   ├── stg_accounts.sql
-│   │   ├── stg_events.sql
-│   │   ├── stg_subscriptions.sql
-│   │   └── stg_users.sql
-│   ├── Intermediate/                   # Business logic layer
-│   │   ├── int_account_event_usage.sql
-│   │   ├── int_account_subscription_features.sql
-│   │   └── int_account_user_summary.sql
-│   └── Marts/                          # Analytics-ready data
-│       └── fct_account_utilization.sql # Final fact table (39 metrics)
+├── ETL/
+│   ├── Alteryx Workflow.png            # Visual workflow diagram
+│   └── Alteryx Workflow.yxmd           # Data profiling + cleaning workflow
 │
-├── Outputs/
-│   └── fct_account_utilization.csv     # Final analysis results (353 accounts)
+├── SQL/
+│   ├── Results - Scripts.zip           # All 6 query outputs (200+ MB compressed)
+│   ├── Basics.sql
+│   ├── Cohort Analysis.sql
+│   ├── Master Data Source.sql
+│   ├── Priority Requests Analysis.sql
+│   ├── Seasonality Pattern Analysis.sql
+│   ├── Source Channel Efficiency Analysis.sql
+│   ├── Validations.sql
+│   └── Workgroup Performance Benchmarking.sql
 │
-├── Config/
-│   └── dbt_project.yml                 # dbt project configuration
+├── Dashboards/
+│   ├── Tableau Viz.twb                 # Interactive Tableau workbook
+│   └── PowerBI Viz.pbix                # PowerBI dashboard
 │
 ├── Docs/
-│   ├── data_lineage.png                # Data pipeline architecture diagram
-│   └── Key Findings.docx               # Executive summary and recommendations
+│   └── Key Findings.docx               # Executive summary of insights
 │
 └── README.md
 ```
+
 **Data Lineage**
 
 **Raw TSV** (1.56M rows) → **Alteryx ETL** (profiling, cleaning, date standardization) → **SQL Server **(stg_kansascityrequests) →  **T-SQL Analytics** (cohort, seasonality, efficiency, benchmarking) → **Tableau Dashboards **(executive overview, dept performance, efficiency)
